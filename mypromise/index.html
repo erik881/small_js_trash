@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Throttle</title>
+</head>
+<body>
+    <script src="mypromise.js"></script>
+    <script>
+        var p = new MyPromise(function(resolve) {
+          setTimeout(function() {
+            resolve('TEST');
+          }, 200);
+        });
+
+        p.then(function(value) {
+          console.log(value);
+          return new MyPromise(function(resolve) {
+            setTimeout(function() { resolve(value + 100), 100});
+          });
+        }).then(function(v) {
+          console.log(v);
+        });
+    </script>
+</body>
+</html>
