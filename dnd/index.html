@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DnD</title>
+    <style>
+      .draggable-elements {
+        display: flex
+      }
+
+      .item {
+        width: 100px;
+        height: 100px;
+        border: 2px solid red;
+        margin-right: 10px;
+      }
+
+      .droppable {
+        width: 300px;
+        height: 300px;
+        margin-top: 40px;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="draggable-elements">
+      <div id="test" class="item">Item1</div>
+      <div class="item">Item2</div>
+      <div class="item">Item3</div>
+    </div>
+
+    <div class="droppable">
+    </div>
+
+    <script src="DragManager.js"></script>
+    <script type="text/javascript">
+      document.getElementById('test').addEventListener('mousedown', window.dragManager.onMouseDown);
+    </script>
+  </body>
+</html>
